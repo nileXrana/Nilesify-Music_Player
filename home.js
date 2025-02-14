@@ -158,30 +158,54 @@ document.querySelector(".galat").addEventListener("click",()=>{
     document.querySelector(".left").style.left = "-100%"
 })
 
-// event listner for previous :
-previous.addEventListener("click",()=>{
-    const idx = (songs.indexOf(currentSong.src))
-    // console.log(idx)
-    if(idx == 0){
-        let a = songs.length
-        playmusic(songs[a-1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
-    }
-    else{
-        playmusic(songs[idx-1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
-    }
-})
+// // event listner for previous :
+// previous.addEventListener("click",()=>{
+//     const idx = (songs.indexOf(currentSong.src))
+//     // console.log(idx)
+//     if(idx == 0){
+//         let a = songs.length
+//         playmusic(songs[a-1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
+//     }
+//     else{
+//         playmusic(songs[idx-1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
+//     }
+// })
 
-// event listner for next :
-next.addEventListener("click",()=>{
-    const idx = (songs.indexOf(currentSong.src))
-    const a = songs.length
-    if(idx == a-1){
-        playmusic(songs[0].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true) 
+// // event listner for next :
+// next.addEventListener("click",()=>{
+//     const idx = (songs.indexOf(currentSong.src))
+//     const a = songs.length
+//     if(idx == a-1){
+//         playmusic(songs[0].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true) 
+//     }
+//     else{
+//         playmusic(songs[idx+1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
+//     }
+// })
+
+
+previous.addEventListener("click", () => {
+    const currentSrc = currentSong.src.split("/").pop(); // Extract filename
+    const idx = songs.findIndex(song => song.split("/").pop() === currentSrc); // Compare filenames
+
+    if (idx === 0) {
+        playmusic(songs[songs.length - 1].split("/").pop().replace(".mp3", "").replace(/_/g, " "), true);
+    } else {
+        playmusic(songs[idx - 1].split("/").pop().replace(".mp3", "").replace(/_/g, " "), true);
     }
-    else{
-        playmusic(songs[idx+1].split("/").pop().replace(".mp3", "").replace(/_/g, " "),true)
+});
+
+next.addEventListener("click", () => {
+    const currentSrc = currentSong.src.split("/").pop(); // Extract filename
+    const idx = songs.findIndex(song => song.split("/").pop() === currentSrc); // Compare filenames
+
+    if (idx === songs.length - 1) {
+        playmusic(songs[0].split("/").pop().replace(".mp3", "").replace(/_/g, " "), true);
+    } else {
+        playmusic(songs[idx + 1].split("/").pop().replace(".mp3", "").replace(/_/g, " "), true);
     }
-})
+});
+
 
 // event listner for awaj and awajButton :
 document.getElementById("awaj").addEventListener("change",(e)=>{
