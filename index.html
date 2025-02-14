@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesify</title>
+    <link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+<body class="bg-black text-white">
+    <div class="container bg-black flex">
+
+        <div class="left w-[25vw] h-[100vh] relative max-xl:absolute max-xl:left-[-100%] max-xl:transition-all duration-[0.3s] max-xl:z-10 max-xl:w-[35vw] max-md:w-[60vw] max-xl:bg-black">
+
+            <img class="galat hidden cursor-pointer invert absolute top-[20px] right-[20px] w-[40px] max-xl:block max-sm:w-[35px] max-sm:top-[15px] max-sm:right-[15px]"
+                src="./img/close.svg" alt="">
+
+            <div class="home bg-[#b3b3b329] flex flex-col justify-center gap-2 text-white p-2 text-sm h-[20vh] m-1 w-auto max-xl:w-[35vw] max-md:w-[60vw]">
+                <div class=" flex text-4xl ml-1 items-center gap-2 logo p-1"><img class=" bg-white rounded-2xl w-[70px]" src="./nilesify.png" alt="logo">
+                    NilesifY
+                </div>
+                <ul class="p-2 flex flex-col gap-2">
+                    <li class="w-5 font-bold flex ml-2 gap-2"><img class="invert" src="./img/home.svg" alt="home">Home
+                    </li>
+                    <!-- <li class="w-5 font-bold flex gap-2 pt-2"><img class="invert" src="./img/search.svg"
+                            alt="search">Search</li> -->
+                </ul>
+            </div>
+            <div class="library bg-[#b3b3b329] m-1 text-white p-3 relative h-[79vh]">
+                <div class="flex gap-2 pl-2">
+                    <img class="w-6 invert" src="./img/playlist.svg" alt="">
+                    Library
+                </div>
+                <ul class=" songList pt-1  text-white mb-7 h-[66vh] overflow-x-auto">
+                    <!-- dynamically songs ayenge..... -->
+
+                    <!-- <li class="flex gap-5 cursor-pointer py-3 p-2 mt-3 rounded-lg justify-between items-center border ">
+                        <div class="flex gap-3 ">
+
+                            <img class="invert" src="./img/music.svg" alt="">
+                            <div class="info">
+                                <div>Song Name</div>
+                                <div>Song Artist </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span>Play Now</span>
+                            <img class="invert" src="./img/play.svg" alt="">
+                        </div>
+                     </li> -->
+                    </ul>
+                    <div class="fixed bottom-2">@NileshRana</div>
+
+
+            </div>
+        </div>
+
+        <div class="right w-[75vw] h-[100vh] bg-[#8080802d] mt-1 absolute right-0 max-xl:w-[100vw]">
+            <div class="header flex justify-between bg-[#ff00b371] sticky h-[60px] max-xl:w-[100vw]">
+                <div class="nav flex p-[20px] gap-5 ">
+                    <div>
+                        <img class="hamburger invert hidden max-xl:block" src="./img/hamburger.svg" alt="">
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="buttons p-2 flex gap-4 items-center">
+                    <a class="text-white hover:text-black" href="https://github.com/nileshrana7500">GitHub</a>
+                    <button onclick="linkedin()"
+                        class="bg-white text-black h-[45px] pl-7 pr-7 pt-0 pb-0 rounded-3xl cursor-pointer font-bold hover:bg-black hover:text-white max-sm:h-[40px] max-sm:text-sm max-sm:px-5">
+                        Linked In
+                    </button>
+                </div>
+            </div>
+            <div class="spotifyPlaylist p-[16px] h-[75vh] overflow-auto ">
+                <h1 class="text-2xl">Trending Songs :</h1>
+
+                <div class="cardContainer mt-4 flex gap-4 flex-wrap m-1 max-md:gap-5 max-sm:justify-center max-sm:gap-x-5 max-sm:gap-y-10">
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/nightchanges.jpg" alt="">
+                        <div class="songName mt-2 max-md:text-[12px]">Night Changes</div>
+                        <div class="text-[11px] max-md:text-[8px]">One Direction</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/millionare.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Millionare</div>
+                        <div class="text-[11px] max-md:text-[8px]">Yo Yo Honey Singh</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/expresso.png" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Expresso</div>
+                        <div class="text-[11px] max-md:text-[8px]">Sabrina Carpenter</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/jotum.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Jo Tum Mere Ho</div>
+                        <div class="text-[11px] max-md:text-[8px]">Anuv Jain</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/perfect.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Perfect</div>
+                        <div class="text-[11px] max-md:text-[8px]">Ed Sheeran</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/terebina.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Tere Bina</div>
+                        <div class="text-[11px] max-md:text-[8px]">Zaeden</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/barish.jpeg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Baarishein</div>
+                        <div class="text-[11px] max-md:text-[8px]">Anuv Jain</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/shapeofyou.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Shape Of You</div>
+                        <div class="text-[11px] max-md:text-[8px]">Ed Sheeran</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/untilifoundher.jpeg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Until I Found You</div>
+                        <div class="text-[11px] max-md:text-[8px]">Stephen Sanchez</div>
+                    </div>
+
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/box.jpeg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">The Box</div>
+                        <div class="text-[11px] max-md:text-[8px]">Roddy Ricch</div>
+                    </div>
+                    
+                    
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/attention.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Attention</div>
+                        <div class="text-[11px] max-md:text-[8px]">Charlie Puth</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/bajrang.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Bajrang Baan(Lofi)</div>
+                        <div class="text-[11px] max-md:text-[8px]">Rasraj Ji Maharaj</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/lucid.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Lucid Dreams</div>
+                        <div class="text-[11px] max-md:text-[8px]">Juice WRLD</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/chorichandra.jpeg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Chori Chandra</div>
+                        <div class="text-[11px] max-md:text-[8px]">Rohit Chauhan</div>
+                    </div>
+                    <div onclick="bigplay(this)" class="card w-[170px] h-[215px] p-2 rounded-xl relative cursor-pointer hover:bg-[#80808052] max-md:w-[120px] max-md:h-[170px] max-sm:w-[150px]"
+                        onmouseover="visible(this)" onmouseout="notVisible(this)">
+                        <svg class="absolute left-27 top-53 opacity-0 transition-all duration-150  ease-in-out max-md:w-11 max-md:left-16"
+                            xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"
+                            shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <circle fill="#01A437" cx="256" cy="256" r="256" />
+                            <path fill="#42C76E"
+                                d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                            <path fill="#000000"
+                                d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                        </svg>
+                        <img class="rounded-md" src="./cover/gulabi.jpg" alt="">
+                        <div class="mt-2 max-md:text-[12px]">Gulabi Sharara</div>
+                        <div class="text-[11px] max-md:text-[8px]">Inder Arya</div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div
+                class="playbar bg-[#ff00b371]  w-[75vw] h-[80px] mb-2 rounded-2xl p-[10px] pt-0 pb-5 fixed bottom-0  max-xl:w-[100vw]">
+                <div
+                    class="seekbar cursor-pointer h-1 w-[98%] border rounded-4xl border-white absolute bottom-4 bg-white max-sm:w-[95%]">
+                </div>
+                <div
+                    class="circle w-[10px] h-[10px] rounded-full bg-white relative top-[57px] transition-all duration-800 ease-out left-0 ">
+                </div>
+                <div class="kuchbhi flex justify-between">
+                    <div class="songInfo mt-2 max-md:text-[12px] max-sm:text-[10px] max-sm:mt-3"></div>
+                    <div class="songButtons  flex gap-5 mt-2 absolute left-[43%] max-sm:gap-2 max-sm:left-[40%]">
+                        <img id="previous" class="invert cursor-pointer" src="./img/prevsong.svg" alt="">
+                        <img id="play" class="invert cursor-pointer" src="./img/play.svg" alt="">
+                        <img id="next" class="invert cursor-pointer" src="./img/nextsong.svg" alt="">
+                    </div>
+                    <div class="flex gap-5 items-center">
+                        <div class="songTime max-md:text-[12px] mt-2 max-sm:text-[10px]">
+
+                        </div>
+                        <div class="volume flex flex-col relative items-center">
+                            <img id="awajButton" class="w-[25px] invert mr-1 mt-2 cursor-pointer max-sm:w-[20px]" src="./img/volume.svg"
+                                alt="">
+                            <input id="awaj" class="w-[100px] h-1 rotate-270 absolute top-[-65px] left-[-40px] hidden"
+                                type="range">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</body>
+
+</html>
