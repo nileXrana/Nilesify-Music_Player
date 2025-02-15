@@ -2656,6 +2656,11 @@
       background-color: #ff0084ba;
     }
   }
+  .max-sm\:bg-\[\#ff0084bb\] {
+    @media (width < 40rem) {
+      background-color: #ff0084bb;
+    }
+  }
   .max-sm\:bg-\[\#ff0084be\] {
     @media (width < 40rem) {
       background-color: #ff0084be;
