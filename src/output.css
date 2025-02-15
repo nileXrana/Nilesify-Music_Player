@@ -2646,6 +2646,11 @@
       row-gap: calc(var(--spacing) * 10);
     }
   }
+  .max-sm\:bg-\[\#ff0084\] {
+    @media (width < 40rem) {
+      background-color: #ff0084;
+    }
+  }
   .max-sm\:bg-\[\#ff0084ba\] {
     @media (width < 40rem) {
       background-color: #ff0084ba;
