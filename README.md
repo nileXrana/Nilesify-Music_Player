@@ -14,6 +14,9 @@ This project was created for **learning purposes only** and comes preloaded with
 - Tailwind CSS
 - JavaScript
 
+## Demo Link
+https://nilesify-music-player.vercel.app/
+
 ## Usage
 1. Clone the repository.
 2. Open `index.html` in your browser.
