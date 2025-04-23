@@ -223,7 +223,7 @@ document.getElementById("awajButton").addEventListener("click",()=>{
 })
 
 function linkedin(){
-    let url = "https://www.linkedin.com/in/nileshrana5/"
+    let url = "https://www.linkedin.com/in/nileXrana/"
     window.open(url);
 }
 
